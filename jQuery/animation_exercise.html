@@ -16,12 +16,28 @@
 
 	<h1>jQuery Animation</h1>
 
-	<div id="animate">ANIMATE</div>
+	<div class="animate">ANIMATE</div>
+	<div class="animate">ANIMATE</div>
+	<div class="animate">ANIMATE</div>
+	<div class="animate">ANIMATE</div>
+	<div class="animate">ANIMATE</div>
+		
 
 
 	<script>
-		var a = $("#animate");		
-		a.fadeIn(5000).fadeOut(3000);
+		/*var a = $("#animate");		
+		a.fadeIn(5000).fadeOut(3000);*/
+		
+		$(document).ready(function() {
+        $('.animate').on('click', function() {
+                $(this).animate({
+                        opacity: 0.0,
+                        paddingLeft: '+=80'
+                    }, 500, function() {
+                        $(this).remove();
+                    });
+                });
+        });
 	</script>
 
 </body>
